@@ -27,6 +27,7 @@ function slap(id){
   death(id)
 update(targetobj)
 }
+
 function punch(id){
   let elm = findbyID(id)
   elm.health -=5
@@ -34,6 +35,7 @@ function punch(id){
   death(id)
 update(targetobj)
 }
+
 function kick(id){
   let elm = findbyID(id)
   elm.health -=10
@@ -41,11 +43,15 @@ function kick(id){
   death(id)
 update(targetobj)
 }
+
 function death(id){
   let target= findbyID(id)
-  if(target.health < 1){ 
-    targetobj.splice(target,1)
+ let index = targetobj.findIndex(t=> t.id == id)
+  if(target.health <= 0){ 
+    targetobj.splice(index,1)
     makeobj(1)
+    debugger
+    update(targetobj)
   }}
 //Utilites
 function IDgen(){
@@ -66,7 +72,7 @@ function update(targetobj){
 let template = ""
 targetobj.forEach(target => 
   template += `
-  <div class="card p-1 col-4">
+  <div class="card p-1 col-3 m-1">
   <img class="card-img-top img-robo" src="https://robohash.org/${target.targetname}" alt="">
   <div class="card-body row">
     <h4 class="card-title col-12">${target.targetname}</h4>

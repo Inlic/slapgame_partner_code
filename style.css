@@ -5,4 +5,7 @@ main{flex-grow: 1;}
   height:200px;
   width: auto;
 }
+.card{
+  height:45vh;
+}
 footer{ }
