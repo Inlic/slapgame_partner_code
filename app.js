@@ -11,7 +11,7 @@ function makeobj(amount){
     targetobj.push(
       {
         targetname: names[namevalue],
-        health: 500,
+        health: 10,
         hits: 0,
         id: IDgen()
       }
@@ -24,21 +24,29 @@ function slap(id){
   let elm = findbyID(id)
   elm.health -=1
   elm.hits += 1
+  death(id)
 update(targetobj)
 }
 function punch(id){
   let elm = findbyID(id)
   elm.health -=5
   elm.hits += 1
+  death(id)
 update(targetobj)
 }
 function kick(id){
   let elm = findbyID(id)
   elm.health -=10
   elm.hits += 1
+  death(id)
 update(targetobj)
 }
-
+function death(id){
+  let target= findbyID(id)
+  if(target.health < 1){ 
+    targetobj.splice(target,1)
+    makeobj(1)
+  }}
 //Utilites
 function IDgen(){
  return Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,5);
@@ -58,7 +66,7 @@ function update(targetobj){
 let template = ""
 targetobj.forEach(target => 
   template += `
-  <div class="card">
+  <div class="card p-1 col-4">
   <img class="card-img-top img-robo" src="https://robohash.org/${target.targetname}" alt="">
   <div class="card-body row">
     <h4 class="card-title col-12">${target.targetname}</h4>
@@ -71,12 +79,12 @@ targetobj.forEach(target =>
         <p>Hits:
           <span >${target.hits}</span>
         </p>
-      </div>
-      </div>
-      <div class= "row">
-      <button type="button" class="btn btn-warning" onclick="slap('${target.id}')">Slap!</button>
-      <button type="button" class="btn btn-warning" onclick="kick('${target.id}')">Kick!</button>
-      <button type="button" class="btn btn-warning" onclick="punch('${target.id}')">Punch!</button>
+        </div>
+        </div>
+      <div class= "row justify-content-around">
+      <button type="button" class="btn btn-warning col-3" onclick="slap('${target.id}')">Slap!</button>
+      <button type="button" class="btn btn-warning col-3" onclick="kick('${target.id}')">Kick!</button>
+      <button type="button" class="btn btn-warning col-3" onclick="punch('${target.id}')">Punch!</button>
       </div>
 </div>`
 );
