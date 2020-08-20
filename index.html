@@ -8,9 +8,21 @@
   <title>Hit me</title>
 </head>
 <body>
-  <header class="container-fluid"></header>
-  <main class="container"></main>
-  <footer class="container-fluid">
+  <header class="container-fluid bg-primary"><h1>Title</h1></header>
+  <main class="container">
+    <div class="row">
+      <img src="//placehold.it/200x200" alt="" class="col-12">
+      <div  class="col-12">
+        <p>Health:
+          <span id="health"></span>
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer class="container-fluid bg-primary">
+    <button type="button" class="btn btn-warning" onclick="slap()">Slap!</button>
+    <button type="button" class="btn btn-warning" onclick="kick()">Kick!</button>
+    <button type="button" class="btn btn-warning" onclick="punch()">Punch!</button>
   </footer>
 
 <script src="./app.js"></script>
