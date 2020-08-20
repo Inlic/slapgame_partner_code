@@ -61,6 +61,7 @@ function death(id){
     debugger
     update(targetobj)
   }}
+
 //Utilites
 function IDgen(){
  return Math.random().toString(36).replace(/[^a-z]+/g,'').substr(0,5);
@@ -84,7 +85,7 @@ targetobj.forEach(target =>
   <img class="card-img-top img-robo" src="https://robohash.org/${target.targetname}" alt="">
   <div class="card-body row">
     <h4 class="card-title col-12">${target.targetname}</h4>
-      <div  class="col-4">
+      <div class="col-4">
         <p>Health:
           <span>${target.health}</span>
         </p>
@@ -93,14 +94,13 @@ targetobj.forEach(target =>
         <p>Hits:
           <span >${target.hits}</span>
         </p>
-        </div>
-        </div>
-      <div class= "row justify-content-around">
-      <button type="button" class="btn btn-warning col-3" onclick="slap('${target.id}')">Slap!</button>
-      <button type="button" class="btn btn-warning col-3" onclick="kick('${target.id}')">Kick!</button>
-      <button type="button" class="btn btn-warning col-3" onclick="punch('${target.id}')">Punch!</button>
       </div>
-</div>`
+      <div class= "row justify-content-around">
+        <button type="button" class="btn btn-warning col-3" onclick="slap('${target.id}')">Slap!</button>
+        <button type="button" class="btn btn-warning col-3" onclick="kick('${target.id}')">Kick!</button>
+        <button type="button" class="btn btn-warning col-3" onclick="punch('${target.id}')">Punch!</button>
+      </div>
+  </div>`
 );
 document.getElementById("game").innerHTML = template
 }

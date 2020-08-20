@@ -1,11 +1,25 @@
-body { min-height: 100vh; display: flex; flex-direction: column; }
-header{ } 
-main{flex-grow: 1;} 
+body {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+ }
+
+header{
+
+} 
+
+main{
+  flex-grow: 1;
+} 
+
 .img-robo{
   size: 50%;
 }
+
 .robo-text{
   font-family: 'Roboto Mono', monospace;
 }
 
-footer{ }
+footer{
+
+}
