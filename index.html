@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Hit me</title>
 </head>
 <body>
-  <header class="container-fluid bg-primary"><h1>Title</h1></header>
+  <header class="container-fluid bg-primary"><h1 class="robo-text">Rock em' Sock em' Robots</h1></header>
   <main class="container-fluid p-4">
-    <div id="game" class="row justify-content-between"> 
+    <div id="game" class="row justify-content-between text-center"> 
+      <div class="card">
+        <img class="card-img-top" src="./robo.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">How many robots can you fight?</h4>
+          
+          <form onsubmit="formobj(event)">
+            <div class="form-group">
+              <label for="robotnumber">This is a discription of the app.</label>
+              <input type="number" class="form-control" id="robotnumber" aria-describedby="robots">
+              <small id="internalrobo" class="form-text text-muted">How many do you want to fight?</small>
+            </div>
+            <button type="submit"class="btn btn-primary">FIGHT!</button>
+          </form>
+        </div>
+      </div>
     </div>
   </main>
   <footer class="container-fluid bg-primary">
