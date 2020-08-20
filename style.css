@@ -1,4 +1,8 @@
 body { min-height: 100vh; display: flex; flex-direction: column; }
 header{ } 
 main{flex-grow: 1;} 
+.img-robo{
+  height:200px;
+  width: auto;
+}
 footer{ }
